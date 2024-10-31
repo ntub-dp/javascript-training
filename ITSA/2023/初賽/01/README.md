@@ -1,6 +1,6 @@
 # 第一題 圖片展示系統
 
-- [影片教學 - Youtube]()
+- [影片教學 - Youtube](https://youtu.be/dsZWyGr9PEY)
 
 ## Library
 - Jquery

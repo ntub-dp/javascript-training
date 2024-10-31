@@ -1,6 +1,6 @@
 ﻿# Todo List 代辦事項清單
 
-- [影片教學 - Youtube]()
+- [影片教學 - Youtube](https://youtu.be/dsZWyGr9PEY)
 
 ## Feature
 - 新增
