@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <!--
+    按下F1 -> 打cdnjs 選擇Search -> 打 jquery 按下Enter -> 選擇
+    -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+
+    <style>
+        li {
+            display: flex;
+            align-items: center;
+        }
+        input[type="checkbox"]:checked + label{
+            text-decoration: line-through;/* 刪除線 */
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>TODO LIST</h1>
+        <input type="text" value="睡覺">
+        <button>新增</button>
+        <ul>
+            <li>
+                <input type="checkbox" name="" id="c1">
+                <label for="c1">text</label>
+            </li>
+        </ul>
+    </main>
+    <script>
+        let idCount = 0;
+        $("button").click(function(){
+            let text = $("input").val();
+            $('ul').append(`
+                 <li>
+                    <input type="checkbox" name="" id="${++idCount}">
+                    <label for="${idCount}">${text}</label>
+                </li>
+            `)
+        })
+    </script>
+</body>
+
+</html>
