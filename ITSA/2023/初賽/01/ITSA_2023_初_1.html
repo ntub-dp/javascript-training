@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+        .btn-group>button {
+            border-radius: 25px;
+            background: #d4d4d4;
+            padding: 5px 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-group>button.active {
+            background: #24aeaa;
+            color: #fff;
+        }
+
+        main {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        main>img {
+            width: 23%;
+            box-shadow: 0 0 5px #000;
+            transition: 300ms;
+        }
+
+        main>img:hover {
+            transform: scale(1.15);
+            box-shadow: none;
+        }
+
+        @media screen and (max-width: 992px) {
+            main>img {
+                width: 31%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            main>img {
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            main>img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="btn-group" align="center">
+        <button class="active">全部圖片</button>
+        <button>自然風景圖</button>
+        <button>城市風景圖</button>
+    </div>
+
+    <main></main>
+
+    <script>
+        $(".btn-group>button").click(function () {
+            $(".btn-group>button.active").removeClass("active")
+            $(this).addClass("active")
+            render()
+        })
+        const types = {
+            '自然風景圖': [2, 3, 4, 5, 8],
+            '城市風景圖': [1, 6, 7]
+        }
+        function render(){
+            $("main").html('')
+            for (let i = 1; i <= 8; i++) {
+                if ($(".btn-group>button.active").text() === '全部圖片' || types[$(".btn-group>button.active").text()].includes(i)) {
+                    $("main").append(`<img src="./images/img (${i}).jpg" alt="">`)
+                }
+            }
+        }
+        render()
+        // const btns = document.querySelectorAll('.btn-group>button');
+        // let filter = '全部圖片'
+        // btns.forEach(btn => {
+        //     btn.addEventListener('click', function () {
+        //         document.querySelector('button.active').classList.remove('active')
+        //         this.classList.add('active')
+        //         filter = this.textContent
+        //         render()
+        //     })
+        // });
+
+        // const main = document.querySelector('main')
+        // const types = {
+        //     '自然風景圖': [2, 3, 4, 5, 8],
+        //     '城市風景圖': [1, 6, 7]
+        // }
+        // function render() {
+        //     main.innerHTML = ''
+        //     for (let i = 1; i <= 8; i++) {
+        //         if (filter === '全部圖片' || types[filter].includes(i)) {
+        //             main.innerHTML += `<img src="./images/img (${i}).jpg" alt="">`
+        //         }
+        //     }
+        // }
+        // render()
+    </script>
+</body>
+
+</html>
