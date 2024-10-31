@@ -84,13 +84,7 @@
             $("main").html('')
             for (let i = 1; i <= 8; i++) {
                 if ($(".btn-group>button.active").text() === '全部圖片' || types[$(".btn-group>button.active").text()].includes(i)) {
-                    // $("main").append(`<img src="./images/img (${i}).jpg" alt="">`)
-                    $("main").append(`
-                        <li>
-                            <input type="checkbox" name="" id="">
-                            <div>text</div>
-                        </li>
-                    `)
+                    $("main").append(`<img src="./images/img (${i}).jpg" alt="">`)
                 }
             }
         }
