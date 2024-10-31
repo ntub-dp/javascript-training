@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輸出是否是偶數</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>送出</button>
+    <div>
+        結果:<span class="result"></span>
+    </div>
+
+    <script>
+        // 整個文件.搜尋元素
+        const btn = document.querySelector('button')
+        const inp = document.querySelector('input')
+        const result = document.querySelector('.result')
+
+        btn.addEventListener('click', function () {
+            const val = inp.value
+        })
+
+        function myFunc(n) {
+            // let res
+            // if (n % 2 === 0) {
+            //     res = "是偶數"
+            // } else {
+            //     res = "是奇數"
+            // }
+            result.textContent = n % 2 === 0 ? "是偶數" : "是奇數"
+        }
+
+
+    </script>
+</body>
+
+</html>

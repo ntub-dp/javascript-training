@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add, .ease {
+            transform: rotate(-90deg);
+        }
+
+        .show {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>簡意計數器</h2>
+
+    <main>
+        <button class="add">&gt;</button>
+        <div class="show">0</div>
+        <button class="ease">&lt;</button>
+    </main>
+
+    <script>
+        const addBtn = document.querySelector('.add')
+        const easeBtn = document.querySelector('.ease')
+        const show = document.querySelector('.show')
+
+        addBtn.addEventListener('click', function () {
+            show.textContent = parseInt(show.textContent) + 1
+            // Number(str) parseInt(str) 轉數字
+            // number.toString() 轉字串
+        })
+        easeBtn.addEventListener('click', function () {
+            show.textContent = Number(show.textContent) - 1
+        })
+    </script>
+</body>
+
+</html>
