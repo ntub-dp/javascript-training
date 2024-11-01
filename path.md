@@ -1,5 +1,3 @@
-﻿# javascript-training
-
 - # 第1章 [.vscode](.vscode)
 - # 第2章 [easy-counter](easy-counter)
     - 2_**01** [checkEven.html](easy-counter/checkEven.html)
