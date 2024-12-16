@@ -1,5 +1,3 @@
-﻿# javascript-training
-
 - # 第1章 [clock](clock)
     - 1_**01** [clock.css](clock.css)
     - 1_**02** [clock.html](clock.html)
