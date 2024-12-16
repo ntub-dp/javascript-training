@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>傳統時鐘模擬</title>
+    <link rel="stylesheet" href="./clock.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>傳統時鐘模擬</h2>
+        <p>時鐘會依選擇的時間進行變化</p>
+        <input type="time" id="timer" step="1" />
+      </section>
+
+      <section class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+      </section>
+    </main>
+
+    <script>
+      const clock = document.querySelector(".clock");
+      for (let i = 11; i < 23; i++) {
+        const idx = i - 11;
+
+        // 360 / 12 = 30
+        clock.innerHTML += `
+        <div class="num" style="rotate:${idx * 30}deg">
+            ${(i % 12) + 1}
+        </div>`;
+      }
+
+      const hour = document.querySelector(".hour");
+      const minute = document.querySelector(".minute");
+      const second = document.querySelector(".second");
+
+      function render(date) {
+        const h = date.getHours();
+        const m = date.getMinutes();
+        const s = date.getSeconds();
+        hour.style.rotate = `${h * 30 + m / 2}deg`; // 360 / 12 = 30
+        minute.style.rotate = `${m * 6 + s / 10}deg`; // 360 / 60 = 6
+        second.style.rotate = `${s * 6}deg`; // 360 / 60 = 6
+      }
+
+      //   setInterval(() => render(new Date()), 1000);
+
+      const timer = document.querySelector("#timer");
+      timer.addEventListener("change", function () {
+        console.log(this.value);
+
+        const time = this.value.split(":");
+        const h = time[0];
+        const m = time[1];
+        const s = time[2];
+
+        render(new Date(0, 0, 0, h, m, s));
+      });
+    </script>
+  </body>
+</html>
