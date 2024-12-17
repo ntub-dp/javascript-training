@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      .d1 {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 2fr 8fr 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="openDialog()" class="open-btn">Click me !</button>
+    <dialog class="d1-container">
+      <div class="d1">
+        <h2>你好</h2>
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+          fugiat, rem sit amet, dicta eius optio quia cumque in, quas voluptates
+          accusamus soluta nostrum eaque.
+        </div>
+        <button class="close-btn" onclick="closeDialog()">X</button>
+        <div class="control">
+          <button onclick="closeDialog()">確認</button>
+          <button onclick="closeDialog()">取消</button>
+        </div>
+      </div>
+    </dialog>
+    <script>
+      const d1 = document.querySelector("dialog");
+      function openDialog() {
+        d1.showModal();
+      }
+      function closeDialog() {
+        d1.close();
+      }
+    </script>
+  </body>
+</html>
