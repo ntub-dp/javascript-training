@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+      input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TODO LIST</h1>
+      <input type="text" value="text3" />
+      <button onclick="addItem()">新增</button>
+      <ul></ul>
+    </main>
+
+    <script>
+      const ul = document.querySelector("ul");
+      const input = document.querySelector("input");
+      let id = 2;
+
+      let datas = [
+        { id: 0, content: "text" },
+        { id: 1, content: "text2" },
+      ];
+
+      function render() {
+        ul.innerHTML = "";
+        for (const data of datas) {
+          ul.innerHTML += `
+                <li>
+                    <span>${data.content}</span>
+                    <button onclick="modifyItem(${data.id})">修改</button>
+                    <button onclick="removeItem(${data.id})">刪除</button>
+                </li>
+            `;
+        }
+      }
+      render();
+
+      function addItem() {
+        datas.push({ id: id++, content: input.value });
+        render();
+      }
+
+      function removeItem(removeId) {
+        datas = datas.filter((data) => data.id !== removeId);
+        // const newDatas = [];
+        // for (const data of datas) {
+        //   if (data.id !== removeId) {
+        //     newDatas.push(data);
+        //   }
+        // }
+        // datas = newDatas;
+        render();
+      }
+
+      function modifyItem(modifyId) {
+        const newContent = prompt("請輸入新的待辦事項:");
+        if (newContent) {
+          const data = datas.find((data) => data.id === modifyId);
+          data.content = newContent;
+          // for (const data of datas) {
+          //   if (data.id === modifyId) {
+          //     data.content = newContent;
+          //     break;
+          //   }
+          // }
+          render();
+        }
+      }
+    </script>
+  </body>
+</html>

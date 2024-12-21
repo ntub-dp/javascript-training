@@ -1,0 +1,38 @@
+.d1-container {
+  width: 300px;
+  height: 500px;
+  padding: 25px;
+
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 35px;
+  box-shadow: 3px 5px 7px rgb(0, 0, 0, 0.3);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 45px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 3px 5px #eee;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: none;
+}

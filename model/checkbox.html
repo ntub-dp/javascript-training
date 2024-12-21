@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      .d1-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        display: grid;
+        grid-template-rows: 2fr 8fr 1fr;
+
+        transition: 300ms;
+        transform-origin: top left;
+        transform: scale(0) translate(-50%, -50%);
+      }
+
+      #toggle-input {
+        display: none;
+      }
+
+      #toggle-input:checked + .d1-container {
+        transform: scale(1) translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <label for="toggle-input" class="btn">Click me !</label>
+    <input type="checkbox" name="" id="toggle-input" />
+    <section class="d1-container">
+      <h2>你好</h2>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+        fugiat, rem sit amet, dicta eius optio quia cumque in, quas voluptates
+        accusamus soluta nostrum eaque.
+      </div>
+      <label for="toggle-input" class="close-btn">X</label>
+      <div class="control">
+        <label for="toggle-input" class="btn">確認</label>
+        <label for="toggle-input" class="btn">取消</label>
+      </div>
+    </section>
+  </body>
+</html>
