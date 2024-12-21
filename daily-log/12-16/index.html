@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>M O M O C O</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div class="mytimer">現在時間：<span id="mytimer"></span></div>
+    <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="bg-text">MOMOCO Paris</div>
+    <script>
+      alert("歡迎光臨我的部落格");
+      const timer = document.querySelector("#mytimer");
+      function addTime() {
+        timer.textContent = new Date().toLocaleString("zh-TW", {
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hour12: true,
+        });
+      }
+      setInterval(addTime, 1000);
+      addTime();
+    </script>
+  </body>
+</html>

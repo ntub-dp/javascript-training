@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="tree-container">
+      <div class="leaves">
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+      </div>
+      <div class="wood"></div>
+    </div>
+
+    <hr />
+
+    <input type="file" name="" id="" class="file-input" />
+    <div class="imgs"></div>
+    <script>
+      const fileInput = document.querySelector(".file-input");
+      const button = document.querySelector("button");
+
+      fileInput.addEventListener("change", (e) => {
+        const files = e.target.files;
+        const imgs = document.querySelector(".imgs");
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.className = "decorate";
+            $(img).draggable({ revert: true });
+            imgs.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      $(".tree-container").droppable({
+        drop: function (event, ui) {
+          const img = document.createElement("img");
+          img.src = ui.helper[0].src;
+          img.style.position = "absolute";
+          img.style.left = ui.offset.left - $(this).offset().left + "px";
+          img.style.top = ui.offset.top - $(this).offset().top + "px";
+          img.className = "decorate";
+          ui.helper[0].remove();
+          $(img).draggable({ revert: true });
+          $(this).append(img);
+        },
+      });
+    </script>
+  </body>
+</html>

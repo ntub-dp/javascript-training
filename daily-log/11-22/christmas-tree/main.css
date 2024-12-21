@@ -1,0 +1,59 @@
+.tree-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.leaves {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.leaf {
+  outline: 2px solid #ffa;
+  background: darkgreen;
+  clip-path: polygon(0% 100%, 50% 0, 100% 100%);
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid darkgreen;
+}
+
+.leaf:nth-child(1) {
+  width: 30%;
+}
+.leaf:nth-child(2) {
+  width: 50%;
+}
+.leaf:nth-child(3) {
+  width: 70%;
+}
+.leaf:nth-child(4) {
+  width: 100%;
+}
+
+.wood {
+  width: 80px;
+  height: 150px;
+  background: sienna;
+}
+
+
+.imgs{
+    margin-top: 10px;
+    border: 1px solid #888;
+    height:100px;
+    width: 100%;
+}
+
+
+.decorate{
+    height: 100px;
+    height: 100px;
+}

@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+nav {
+  width: 100%;
+  background: #67c;
+  padding: 2% 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #eee;
+}
+
+.snow-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.snow-btn > i {
+  font-size: 1.5rem;
+  color: #eee;
+}
+.snow-container {
+  min-height: 95vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to bottom, #eccfa3 40%, #d6b282);
+}
+
+.tree-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.tree-container img {
+  width: 100%;
+  border-radius: 20px;
+  transition: box-shadow 400ms;
+}
+
+.tree-container img:hover {
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+}
+
+.snow {
+  position: absolute;
+  top: -500px;
+  color: #fff;
+  filter: drop-shadow(0 0 1px #ddd8);
+  animation: drift 1s infinite alternate linear, down 10s infinite linear,
+    rotate 10s infinite linear;
+}
+
+@keyframes drift {
+  from {
+    translate: -40px;
+  }
+  to {
+    translate: 40px;
+  }
+}
+
+@keyframes down {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
