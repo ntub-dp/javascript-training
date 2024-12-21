@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 微軟正黑體;
+      }
+
+      .wrapper {
+        margin: 25px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .box {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px 20px;
+      }
+
+      @media (max-width: 768px) {
+        .wrapper {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 350px) {
+        .wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- .box*8>h2{Title $}+p>lorem10 -->
+      <div class="box">
+        <h2>Title 1</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
+          asperiores?
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 2</h2>
+        <p>
+          Voluptates temporibus officia similique distinctio aspernatur ipsam
+          hic repudiandae nihil?
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 3</h2>
+        <p>
+          Voluptas quaerat unde rerum nihil dignissimos, velit officia quisquam
+          minima.
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 4</h2>
+        <p>
+          Officia vel placeat ullam quae architecto. Repellendus deserunt quia
+          aut.
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 5</h2>
+        <p>
+          Quibusdam, omnis! Iste quam aliquam culpa beatae deserunt inventore
+          porro.
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 6</h2>
+        <p>
+          Nemo assumenda nihil minus. Eligendi laborum totam voluptatibus
+          explicabo ipsam!
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 7</h2>
+        <p>
+          Sequi alias necessitatibus ut rerum unde in delectus nihil numquam.
+        </p>
+      </div>
+      <div class="box">
+        <h2>Title 8</h2>
+        <p>
+          Ipsam labore maxime voluptatem officiis dolorem nobis optio in nam!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
