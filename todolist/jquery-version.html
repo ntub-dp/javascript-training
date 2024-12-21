@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <!--
+    按下F1 -> 打cdnjs 選擇Search -> 打 jquery 按下Enter -> 選擇
+    -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+        integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+        crossorigin='anonymous'></script>
+
+    <style>
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"]:checked+label {
+            text-decoration: line-through;
+            /* 刪除線 */
+        }
+
+        dialog {
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>TODO LIST</h1>
+        <input type="text" value="睡覺">
+        <button class="add">新增</button>
+        <ul></ul>
+    </main>
+
+    <dialog>
+        <h3>修改項目</h3>
+        <input type="text" class="modify-input">
+        <button class="modify-btn">確定</button>
+    </dialog>
+
+    <script>
+        $(document).ready(function () {
+            let idCount = 0
+            let currentModifyLabel = 0
+            const modifyInput = $(".modify-input")
+            const dialog = document.querySelector('dialog')
+
+            // 新增項目
+            function addItem() {
+                let text = $("input").val();
+                $('ul').append(`
+                    <li>
+                        <input type="checkbox" id="${++idCount}">
+                        <label for="${idCount}">${text}</label>
+                        <button class="modifyItem">修改</button>
+                        <button class="removeItem">X</button>
+                    </li>
+                `)
+                $('button.modifyItem').click(function () {
+                    dialog.showModal()
+                    currentModifyLabel = $(this).prev()
+                    modifyInput.val(currentModifyLabel.text())
+                })
+                $('button.removeItem').click(removeItem)
+            }
+
+            // 刪除項目
+            function removeItem() {
+                $(this).parent().remove()
+            }
+
+            // 修改項目
+            function modifyItem() {
+                const newText = modifyInput.val();
+                currentModifyLabel.text(newText)
+                dialog.close()
+            }
+            // function modifyItem() {
+            //     const label = $(this).prev();
+            //     const newText = prompt('請輸入新的文字', label.text());
+            //     label.text(newText);
+            // }
+
+            // 監聽事件
+            $("button.add").click(addItem)
+            $('.modify-btn').click(modifyItem)
+        })
+    </script>
+</body>
+
+</html>

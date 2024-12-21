@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        display: flex;
+      }
+      .pending-container {
+        width: 50%;
+        border: 2px solid red;
+      }
+      .finish-container {
+        width: 50%;
+        border: 2px solid blue;
+      }
+      ul {
+        list-style-position: outside;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">代辦事件管理</h1>
+    <input type="text" placeholder="標題" id="title" />
+    <input type="text" placeholder="事件描述" id="content" />
+    <input type="datetime-local" id="date" />
+    <button onclick="addItem()">新增</button>
+    <h2>事件列表</h2>
+    <div class="wrap">
+      <section class="pending-container">
+        <h3>未完成</h3>
+        <ul id="pending"></ul>
+      </section>
+
+      <section class="finish-container">
+        <h3>完成</h3>
+        <ul id="finish"></ul>
+      </section>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
